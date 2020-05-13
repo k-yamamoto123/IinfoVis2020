@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>W02: Task 02</title>
+    </head>
+    <body>
+        <form name="form1">
+        <p>x<input type="number"
+               id="x1"
+               name="x1"
+               value="0">
+        y<input type="number"
+               id="y1"
+               name="y1"
+               value="0">
+        z<input type="number"
+               id="z1"
+               name="z1"
+               value="0">
+        </p></form>
+        <input type="button" value="calculate" onclick="calcBtn()">
+        <div id="min"></div>
+        <div id="mid"></div>
+        <div id="max"></div>
+        <script src="vec3.js"></script>
+        <script>
+            function calcBtn(){
+                const x1 = document.form1.x1.value;
+                const y1 = document.form1.y1.value;
+                const z1 = document.form1.z1.value;
+                var v1 = new Vec3( x1, y1, z1);
+                document.getElementById("min").innerHTML = "Min:" + v1.min();
+                document.getElementById("mid").innerHTML = "Mid:" + v1.mid();
+                document.getElementById("max").innerHTML = "Max:" + v1.max();
+            }
+        </script>
+    </body>
+</html>

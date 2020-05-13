@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>W02: Task 03</title>
+    </head>
+    <body>
+        <form name="form1">
+        <p>
+        x1<input type="number"
+               id="x1"
+               name="x1"
+               value="0">
+        y1<input type="number"
+               id="y1"
+               name="y1"
+               value="0">
+        z1<input type="number"
+               id="z1"
+               name="z1"
+               value="0">
+        </p>
+        <p>
+        x2<input type="number"
+            id="x2"
+            name="x2"
+            value="0">
+        y2<input type="number"
+            id="y2"
+            name="y2"
+            value="0">
+        z2<input type="number"
+            id="z2"
+            name="z2"
+            value="0">
+        </p>
+        <p>x3<input type="number"
+            id="x3"
+            name="x3"
+            value="0">
+        y3<input type="number"
+            id="y3"
+            name="y3"
+            value="0">
+        z3<input type="number"
+            id="z3"
+            name="z3"
+            value="0">
+        </p></form>
+        <input type="button" value="calculate" onclick="calcBtn()">
+        <div id="area"></div>
+        <script src="vec3.js"></script>
+        <script>
+            function calcBtn(){
+                const x1 = document.form1.x1.value;
+                const y1 = document.form1.y1.value;
+                const z1 = document.form1.z1.value;
+                const x2 = document.form1.x2.value;
+                const y2 = document.form1.y2.value;
+                const z2 = document.form1.z2.value;
+                const x3 = document.form1.x3.value;
+                const y3 = document.form1.y3.value;
+                const z3 = document.form1.z3.value;
+                var v1 = new Vec3( x1, y1, z1);
+                var v2 = new Vec3( x2, y2, z2);
+                var v3 = new Vec3( x3, y3, z3);
+                var v4 = v2;
+                var v5 = v3;
+                v4.sub(v1);
+                v5.sub(v1);
+                document.getElementById("area").innerHTML = "Area of Triangle:" + v4.calcArea(v5);
+            }
+        </script>
+    </body>
+</html>
